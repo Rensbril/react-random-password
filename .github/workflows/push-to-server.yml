@@ -19,9 +19,9 @@ jobs:
       run: npm run build
 
     - name: Copy files to server
-      run: sshpass -e scp -r dist/ rens@83.82.4.97:/var/www/html
-      env:
-        SSHPASS: ${{ secrets.SSH_PASSWORD }}
+      run: sshpass -p "${{ secrets.SSH_PASSWORD }}" scp -r dist/ rens@83.82.4.97:/var/www/html
+#       env:
+#         SSHPASS: ${{ secrets.SSH_PASSWORD }}
       
 
 
