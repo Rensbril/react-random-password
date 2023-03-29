@@ -23,9 +23,9 @@ jobs:
       with:
         local: 'dist'
         remote: '/var/www/html'
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.SSH_USER }}
-        password: ${{ secrets.SSH_PASSWORD }}
+        host: 83.82.4.97
+        username: rens
+        privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
 
 
     - name: Restart server
