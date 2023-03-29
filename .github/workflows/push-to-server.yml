@@ -19,13 +19,9 @@ jobs:
       run: npm run build
 
     - name: Copy files to server
-      uses: garygrossgarten/github-action-scp@release
-      with:
-        local: 'dist'
-        remote: '/var/www/html'
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.SSH_USER }}
-        privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: scp -r dist/ rens@83.82.4.97:/var/www/html
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
 
     - name: Restart server
