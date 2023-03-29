@@ -19,7 +19,7 @@ jobs:
       run: npm run build
 
     - name: Copy files to server
-      uses: appleboy/scp-action@master
+      uses: appleboy/ssh-action@v0.1.8
       with:
         host: 83.82.4.97
         username: rens
