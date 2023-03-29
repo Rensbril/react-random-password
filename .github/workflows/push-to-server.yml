@@ -19,13 +19,13 @@ jobs:
       run: npm run build
 
     - name: Copy files to server
-      uses: garygrossgarten/github-action-scp@release
+      uses: appleboy/ssh-action@v0.1.8
       with:
-        local: 'dist'
         remote: '/var/www/html'
         host: 83.82.4.97
         username: rens
         password: ${{ secrets.SSH_PASSWORD }}
+        script: 'cp -r dist/* /var/www/html'
 
 
     - name: Restart server
