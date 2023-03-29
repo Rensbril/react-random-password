@@ -21,7 +21,6 @@ jobs:
     - name: Copy files to server
       uses: appleboy/ssh-action@v0.1.8
       with:
-        remote: '/var/www/html'
         host: 83.82.4.97
         username: rens
         password: ${{ secrets.SSH_PASSWORD }}
