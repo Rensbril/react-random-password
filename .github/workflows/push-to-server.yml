@@ -19,9 +19,7 @@ jobs:
       run: npm run build
 
     - name: Copy files to server
-      run: scp -r dist/ rens@83.82.4.97:/var/www/html
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: sshpass -p ${{ secrets.SSH_PASSWORD }} scp -r dist/ rens@83.82.4.97:/var/www/html
 
 
     - name: Restart server
