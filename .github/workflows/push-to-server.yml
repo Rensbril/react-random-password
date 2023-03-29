@@ -28,7 +28,7 @@ jobs:
         target: '/var/www/html'
 
     - name: Restart server
-      uses: appleboy/ssh-action@v1.2.2
+      uses: appleboy/ssh-action@v0.1.8
       with:
         host: 83.82.4.97
         username: rens
