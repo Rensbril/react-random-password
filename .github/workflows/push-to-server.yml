@@ -25,7 +25,7 @@ jobs:
         remote: '/var/www/html'
         host: 83.82.4.97
         username: rens
-        privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+        password: ${{ secrets.SSH_PASSWORD }}
 
 
     - name: Restart server
