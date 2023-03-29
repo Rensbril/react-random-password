@@ -25,7 +25,7 @@ jobs:
         remote: '/var/www/html'
         host: ${{ secrets.HOST }}
         username: ${{ secrets.SSH_USER }}
-        password: ${{ secrets.PASSWORD }}
+        password: ${{ secrets.SSH_PASSWORD }}
 
 
     - name: Restart server
